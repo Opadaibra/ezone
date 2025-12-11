@@ -1,0 +1,289 @@
+<div class="landing" [dir]="dir">
+  <header class="navbar">
+    <div class="container header-container">
+      <div class="brand animate__animated animate__flipInY">
+        <img src="assets/images/logo.png" alt="eZone Company" class="logo">
+        <span class="ezone-text">EZone</span>
+      </div>
+      <nav>
+        <ng-container *ngFor="let link of links; let i = index">
+          <a [href]="link.href" class="nav-link animate__animated animate__bounceIn"
+            [style.animation-delay]="(i * 0.1) + 's'">
+            {{ link.label | translate }}
+          </a>
+        </ng-container>
+      </nav>
+      <div class="togglers">
+        <app-language-switcher></app-language-switcher>
+        <app-theme-toggle></app-theme-toggle>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="bg-pattern"></div>
+    <div class="container hero-content">
+      <div class="hero-text" data-aos="fade-right">
+        <h1>{{ 'WELCOME_TO_EZONE' | translate }}</h1>
+        <p>
+          {{ 'EZONE_EDUCATIONAL_PLATFORM' | translate }}
+          {{ 'LARGEST_RESEARCH_COMPANY' | translate }}
+        </p>
+        <div class="actions">
+          <a href="#contact" class="btn primary">{{ 'GET_STARTED_BUTTON' | translate }} <i
+              class="fa-solid fa-arrow-right"></i></a>
+          <a  class="btn outline">{{ 'OUR_SERVICES_BUTTON' | translate }} <i
+              class="fa-solid fs-2 fa-mobile-android"></i></a>
+        </div>
+      </div>
+      <div class="hero-image animate__animated animate__flipInY" data-aos="fade-left">
+        <img src="assets/images/hero.jpg" alt="eZone Platform" class="hero-img">
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section" id="about" style="padding: 4rem 0; background: var(--bg-color);">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>{{ 'ABOUT_EZONE' | translate }}</h2>
+        <p class="section-subtitle">{{ 'EDUCATION_CENTER' | translate }}</p>
+      </div>
+      <div class="about-content" data-aos="fade-up">
+        <p>{{ 'COMPANY_DESCRIPTION' | translate }}</p>
+        <p>{{ 'SERVICES_INCLUDE' | translate }}</p>
+        <p>{{ 'GLOBAL_REACH_DESC' | translate }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>{{ 'OUR_SERVICES' | translate }}</h2>
+        <p class="section-subtitle">{{ 'ALL_SPECIALIZATIONS' | translate }}</p>
+      </div>
+      
+      <div class="services-grid" data-aos="fade-up">
+        <div class="service-card" *ngFor="let service of services">
+          <div class="service-icon">
+            <i class="fa-solid {{ service.icon }}"></i>
+          </div>
+          <h3>{{ service.title | translate }}</h3>
+          <p>{{ service.description | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="statistics-section" id="statistics">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>{{ 'OUR_IMPACT' | translate }}</h2>
+        <p class="section-subtitle">{{ 'TRACK_RECORD' | translate }}</p>
+      </div>
+
+      <div class="statistics-timeline">
+        <!-- الخط المتعرج الخلفي -->
+        <div class="timeline-wave">
+          <svg width="100%" height="100">
+            <path d="M0,50 Q100,0 200,50 T400,50 T600,50 T800,50" fill="none" stroke="var(--accent-color)"
+              stroke-width="2" stroke-dasharray="5,5" opacity="0.3" />
+          </svg>
+        </div>
+
+        <!-- البطاقات المعلقة على الخط -->
+        <div class="statistics-cards-container">
+          <div class="statistic-wave-card" *ngFor="let stat of statistics; let i = index"
+            [style.animation-delay]="i * 0.2 + 's'" data-aos="fade-up">
+
+            <div class="wave-card-inner">
+              <!-- الدائرة العائمة مع الرقم -->
+              <div class="floating-circle">
+                <span class="circle-number">{{ stat.number }}</span>
+                <span class="circle-plus">{{ stat.plus }}</span>
+                <div class="circle-pulse"></div>
+              </div>
+
+              <!-- محتوى البطاقة -->
+              <div class="wave-card-content">
+                <h3>{{ stat.title | translate }}</h3>
+                <p>{{ stat.description | translate }}</p>
+
+                <!-- الموجة المعلقة -->
+                <div class="card-wave">
+                  <svg width="100%" height="20">
+                    <path d="M0,10 Q20,0 40,10 T80,10 T120,10" fill="none" stroke="var(--accent-gradient)"
+                      stroke-width="2" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="values-section" id="values">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>{{ 'OUR_CORE_VALUES' | translate }}</h2>
+      </div>
+  
+      <!-- خطوات القيم المتصلة -->
+      <div class="values-timeline">
+        <div class="values-steps">
+          <!-- خط الاتصال الأفقي -->
+          <div class="connection-line"></div>
+  
+          <!-- كل قيمة كخطوة -->
+          <div class="value-step" *ngFor="let value of coreValues; let i = index" 
+               data-aos="fade-up" [attr.data-aos-delay]="i * 100">
+            
+            <!-- الدائرة مع الأيقونة -->
+            <div class="step-circle">
+              <div class="value-icon">
+                <i class="fa-solid {{ value.icon }}"></i>
+              </div>
+              <!-- نقطة اتصال للخط -->
+              <div class="connection-dot"></div>
+            </div>
+  
+            <!-- محتوى الخطوة -->
+            <div class="step-content">
+              <h3>{{ value.title | translate }}</h3>
+              <p>{{ value.description | translate }}</p>
+            </div>
+  
+            <!-- خطوط التوصيل العمودية -->
+            <div class="vertical-line top"></div>
+            <div class="vertical-line bottom"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2>{{ 'PLATFORM_FEATURES' | translate }}</h2>
+        <p class="section-subtitle">{{ 'SHOWCASING_EXCELLENCE' | translate }}</p>
+      </div>
+
+      <div class="features-carousel" data-aos="fade-up">
+        <p-carousel [value]="features" [numVisible]="3" [numScroll]="1" [circular]="true" [hidden]="true"
+          [autoplayInterval]="3000" [showNavigators]="false" [showIndicators]="false"
+          [responsiveOptions]="responsiveOptions">
+
+          <ng-template let-feature pTemplate="item">
+            <div class="feature-carousel-item">
+              <div class="feature-image-container">
+                <img [src]="feature.image" [alt]="feature.title | translate" class="feature-carousel-image">
+              </div>
+              <div class="feature-content p-4">
+                <h3 class="feature-title">{{ feature.title | translate }}</h3>
+                <p class="feature-description">{{ feature.description | translate }}</p>
+              </div>
+            </div>
+          </ng-template>
+        </p-carousel>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-content" data-aos="fade-up">
+        <div class="contact-info">
+          <h2>{{ 'GET_IN_TOUCH' | translate }}</h2>
+          <p>{{ 'READY_TO_LEARN' | translate }}</p>
+
+          <div class="contact-details">
+            <div class="contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <span>+971 50 964 2043</span>
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <span>+963 991 405 870</span>
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <span>info&#64;ezone.icu</span>
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-globe"></i>
+              <span>https://web.ezone.icu</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <form>
+            <div class="form-group">
+              <input type="text" [placeholder]="'YOUR_NAME' | translate" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="email" [placeholder]="'YOUR_EMAIL' | translate" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="text" [placeholder]="'YOUR_SPECIALIZATION' | translate" class="form-control">
+            </div>
+            <div class="form-group">
+              <textarea [placeholder]="'YOUR_MESSAGE' | translate" rows="5" class="form-control"></textarea>
+            </div>
+            <button type="submit" class="btn primary">{{ 'SEND_MESSAGE' | translate }} <i
+                class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="footer">
+    <div class="footer-container">
+        <div class="row">
+            <div class="col contact-col">
+                <img src="assets/images/logo.png" class="logo-img" alt="شعار eZone">
+                <div class="grey-text">+971 50 964 2043</div>
+                <div class="grey-text">+963 991 405 870</div>
+                <div class="grey-text location">
+                    <span>{{ 'ALL_RIGHTS_RESERVED' | translate }}</span>
+                </div>
+            </div>
+            
+            <div class="col copyright-col">
+                <div class="copyright-content">
+                    <div class="fw-bold grey-text">CopyRight &copy; 2025 eZone</div>
+                    <div class="fw-bold grey-text">{{ 'RIGHTS' | translate }}</div>
+                    <div class="footer-divider"></div>
+                    <p class="footer-slogan">{{'ACADEMIC_EXCELLENCE_FOOTER'|translate}}</p>
+                </div>
+            </div>
+            
+            <div class="col social-col">
+                <p class="grey-text follow-text">{{'FollowUs' | translate}}</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/Engineering-Zone-106471068672773/" class="social-icon facebook" aria-label="فيسبوك" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://instagram.com/_engineering_zone?igshid=N2ZiY2E3YmU=" class="social-icon instagram" aria-label="انستغرام" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon twitter" aria-label="تويتر">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon whatsapp" aria-label="واتساب">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+                <div class="email-contact">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>info&#64;ezone.icu</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
