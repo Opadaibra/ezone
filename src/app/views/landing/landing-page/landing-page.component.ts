@@ -52,7 +52,7 @@ export class LandingPageComponent {
     { label: 'SERVICES', href: '#services' },
     { label: 'STATISTICS', href: '#statistics' },
     { label: 'FEATURES', href: '#features' },
-    { label: 'CONTACT', href: '#contact' }
+    { label: 'CONTACT', href: '#footer' }
   ];
 
   statistics = [
@@ -92,11 +92,11 @@ export class LandingPageComponent {
       title: 'GLOBAL_REACH',
       description: 'GLOBAL_REACH_DESC'
     },
-    {
-      icon: 'fa-users',
-      title: 'EXPERT_TEAM',
-      description: 'EXPERT_TEAM_DESC'
-    }
+    // {
+    //   icon: 'fa-users',
+    //   title: 'EXPERT_TEAM',
+    //   description: 'EXPERT_TEAM_DESC'
+    // }
   ];
 
   features = [
