@@ -130,6 +130,13 @@ export class LandingPageComponent {
       description: 'SMART_NOTIFICATIONS_DESC',
       image: 'assets/images/feature5.jpg'
     }
+    ,
+    {
+      id: 6,
+      title: 'START_NOW',
+      description: '',
+      image: 'assets/images/feature6.jpg'
+    }
   ];
 
   services = [
@@ -164,4 +171,73 @@ export class LandingPageComponent {
       description: 'SCIENTIFIC_ARTICLES_DESC'
     }
   ];
+
+  // أضف هذه الخصائص في الكلاس
+testimonials = [
+  {
+    name: 'AHMED_ALI',
+    course: 'COMPUTER_SCIENCE_ENGINEERING',
+    university: 'UNIVERSITY_OF_DUBAI',
+    text: 'TESTIMONIAL_TEXT_1',
+    avatar: 'assets/images/students/student1.jpg'
+  },
+  {
+    name: 'FATIMA_HASSAN',
+    course: 'ELECTRICAL_ENGINEERING',
+    university: 'SHARJAH_UNIVERSITY',
+    text: 'TESTIMONIAL_TEXT_2',
+    avatar: 'assets/images/students/student2.jpg'
+  },
+  {
+    name: 'OMAR_IBRAHIM',
+    course: 'CIVIL_ENGINEERING',
+    university: 'ABU_DHABI_UNIVERSITY',
+    text: 'TESTIMONIAL_TEXT_3',
+    avatar: 'assets/images/students/student3.jpg'
+  },
+  {
+    name: 'SARA_MOHAMMED',
+    course: 'MECHANICAL_ENGINEERING',
+    university: 'AL_AIN_UNIVERSITY',
+    text: 'TESTIMONIAL_TEXT_4',
+    avatar: 'assets/images/students/student4.jpg'
+  },
+  {
+    name: 'KHALED_ABDULLAH',
+    course: 'CHEMICAL_ENGINEERING',
+    university: 'DUBAI_POLYTECHNIC',
+    text: 'TESTIMONIAL_TEXT_5',
+    avatar: 'assets/images/students/student5.jpg'
+  }
+];
+
+currentTestimonial = 0;
+
+// أضف هذه الدوال
+nextTestimonial() {
+  this.currentTestimonial = (this.currentTestimonial + 1) % this.testimonials.length;
+  this.scrollToTestimonial();
+}
+
+prevTestimonial() {
+  this.currentTestimonial = (this.currentTestimonial - 1 + this.testimonials.length) % this.testimonials.length;
+  this.scrollToTestimonial();
+}
+
+goToTestimonial(index: number) {
+  this.currentTestimonial = index;
+  this.scrollToTestimonial();
+}
+
+scrollToTestimonial() {
+  const track = document.querySelector('.testimonials-track');
+  const card = document.querySelector('.testimonial-card.active');
+  if (track && card) {
+    card.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'center'
+    });
+  }
+}
 }

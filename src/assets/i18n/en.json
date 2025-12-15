@@ -6,13 +6,13 @@
   "FEATURES": "Features",
   "CONTACT": "Contact",
   "WELCOME_TO_EZONE": "Welcome to EZone",
-  "EZONE_EDUCATIONAL_PLATFORM": "The largest educational and research platform in the Arab world.",
+  "EZONE_EDUCATIONAL_PLATFORM": "The largest educational and research platform in the Arab world and Europe.",
   "LARGEST_RESEARCH_COMPANY": "A leading educational and research center providing integrated educational services.",
   "GET_STARTED_BUTTON": "Start Your Learning Journey",
   "OUR_SERVICES_BUTTON": "Download Apk",
   "ABOUT_EZONE": "About eZone",
   "EDUCATION_CENTER": "Integrated Educational & Research Center",
-  "COMPANY_DESCRIPTION": "eZone is the largest research company in the Arab world, providing comprehensive educational and research services for students and researchers in all specialties.",
+  "COMPANY_DESCRIPTION": "eZone is the largest research company in the Arab world and Europe, providing comprehensive educational and research services for students and researchers in all specialties.",
   "SERVICES_INCLUDE": "We offer private tutoring, academic research, graduation projects, master's theses, doctoral dissertations, and professional scientific articles.",
   "GLOBAL_REACH_DESC": "Our services cover all specialties for all countries worldwide in all languages.",
   "OUR_SERVICES": "Our Services",
@@ -59,6 +59,7 @@
   "SKILL_DEVELOPMENT": "Skill Development",
   "SKILL_DEVELOPMENT_DESC": "Comprehensive courses for developing academic and practical skills.",
   "SMART_NOTIFICATIONS": "Smart Notifications",
+  "START_NOW": "Start your trip know",
   "SMART_NOTIFICATIONS_DESC": "Smart notification system to help you track your learning path.",
   "GET_IN_TOUCH": "Get in Touch",
   "READY_TO_LEARN": "Ready to start your learning journey?",
@@ -87,5 +88,36 @@
     "PRIVACY_POLICY": "Privacy Policy",
     "TERMS_CONDITIONS": "Terms & Conditions",
     "COOKIE_POLICY": "Cookie Policy",
-    "BACK_TO_TOP": "Back to Top"
+    "BACK_TO_TOP": "Back to Top",
+    
+      "STUDENT_TESTIMONIALS": "Student Testimonials",
+      "WHAT_OUR_STUDENTS_SAY": "What Our Students Say About Our Platform",
+      "AVERAGE_RATING": "Average Rating",
+      "STUDENT_REVIEWS": "Student Reviews",
+      "SATISFACTION_RATE": "Satisfaction Rate",
+      
+      "AHMED_ALI": "Ahmed Ali",
+      "FATIMA_HASSAN": "Fatima Hassan",
+      "OMAR_IBRAHIM": "Omar Ibrahim",
+      "SARA_MOHAMMED": "Sara Mohammed",
+      "KHALED_ABDULLAH": "Khaled Abdullah",
+      
+      "COMPUTER_SCIENCE_ENGINEERING": "Computer Science Engineering",
+      "ELECTRICAL_ENGINEERING": "Electrical Engineering",
+      "CIVIL_ENGINEERING": "Civil Engineering",
+      "MECHANICAL_ENGINEERING": "Mechanical Engineering",
+      "CHEMICAL_ENGINEERING": "Chemical Engineering",
+      
+      "UNIVERSITY_OF_DUBAI": "University of Dubai",
+      "SHARJAH_UNIVERSITY": "University of Sharjah",
+      "ABU_DHABI_UNIVERSITY": "Abu Dhabi University",
+      "AL_AIN_UNIVERSITY": "Al Ain University",
+      "DUBAI_POLYTECHNIC": "Dubai Polytechnic",
+      
+      "TESTIMONIAL_TEXT_1": "The EZone platform changed the way I learn engineering. The interactive lessons and practical exercises helped me understand complex subjects easily.",
+      "TESTIMONIAL_TEXT_2": "Thanks to the academic support from EZone, I was able to complete my graduation project successfully and received an excellent grade. The support team was always available.",
+      "TESTIMONIAL_TEXT_3": "The platform provides excellent educational resources for engineers. The ready-made research helped me save a lot of time in my academic projects.",
+      "TESTIMONIAL_TEXT_4": "The expert teachers at EZone provided me with valuable guidance in the field of mechanical engineering. The academic quality is excellent.",
+      "TESTIMONIAL_TEXT_5": "The platform's interactivity and user-friendly design made the learning experience truly enjoyable. I recommend it to every engineering student."
+    
 }

@@ -6,13 +6,13 @@
   "FEATURES": "المميزات",
   "CONTACT": "تواصل معنا",
   "WELCOME_TO_EZONE": "مرحباً بكم في EZone",
-  "EZONE_EDUCATIONAL_PLATFORM": "أكبر منصة تعليمية وبحثية في الوطن العربي.",
+  "EZONE_EDUCATIONAL_PLATFORM": " أكبر منصة تعليمية وبحثية في الوطن العربي وأوربا.",
   "LARGEST_RESEARCH_COMPANY": "مركز تعليمي وبحثي رائد يقدم خدمات تعليمية متكاملة.",
   "GET_STARTED_BUTTON": "ابدأ رحلتك التعليمية",
   "OUR_SERVICES_BUTTON": "تحميل التطبيق ",
   "ABOUT_EZONE": "عن eZone",
   "EDUCATION_CENTER": "مركز تعليمي وبحثي متكامل",
-  "COMPANY_DESCRIPTION": "eZone هي أكبر شركة بحوث في الوطن العربي، تقدم خدمات تعليمية وبحثية متكاملة للطلاب والباحثين في جميع التخصصات.",
+  "COMPANY_DESCRIPTION": "eZone هي أكبر شركة بحوث في الوطن العربي وأوربا، تقدم خدمات تعليمية وبحثية متكاملة للطلاب والباحثين في جميع التخصصات.",
   "SERVICES_INCLUDE": "نقدم دروس خصوصية، بحوث أكاديمية، مشاريع تخرج، رسائل ماجستير، أطروحات دكتوراه، ومقالات علمية احترافية.",
   "GLOBAL_REACH_DESC": "خدماتنا تشمل جميع التخصصات لجميع دول العالم وبجميع اللغات.",
   "OUR_SERVICES": "خدماتنا",
@@ -58,6 +58,8 @@
   "SKILL_DEVELOPMENT_DESC": "كورسات شاملة لتنمية المهارات الأكاديمية والعملية.",
   "SMART_NOTIFICATIONS": "إشعارات ذكية",
   "SMART_NOTIFICATIONS_DESC": "نظام إشعارات ذكي لمساعدتك في متابعة مسارك التعليمي.",
+  "START_NOW": "إبدأ رحلتك الآن",
+ 
   "GET_IN_TOUCH": "تواصل معنا",
   "READY_TO_LEARN": "مستعد لبدء رحلتك التعليمية؟",
     "FOUNDATION_OF_EXCELLENCE": "أساس التميز في كل ما نقدمه",
@@ -87,5 +89,35 @@
   "PRIVACY_POLICY": "سياسة الخصوصية",
   "TERMS_CONDITIONS": "الشروط والأحكام",
   "COOKIE_POLICY": "سياسة الكوكيز",
-  "BACK_TO_TOP": "العودة للأعلى"
+  "BACK_TO_TOP": "العودة للأعلى",
+  "STUDENT_TESTIMONIALS": "آراء طلابنا",
+  "WHAT_OUR_STUDENTS_SAY": "ماذا يقول طلابنا عن منصتنا",
+  "AVERAGE_RATING": "متوسط التقييم",
+  "STUDENT_REVIEWS": "تقييم طلابي",
+  "SATISFACTION_RATE": "معدل الرضا",
+  
+  "AHMED_ALI": "أحمد علي",
+  "FATIMA_HASSAN": "فاطمة حسن",
+  "OMAR_IBRAHIM": "عمر إبراهيم",
+  "SARA_MOHAMMED": "سارة محمد",
+  "KHALED_ABDULLAH": "خالد عبدالله",
+  
+  "COMPUTER_SCIENCE_ENGINEERING": "هندسة الحاسوب",
+  "ELECTRICAL_ENGINEERING": "هندسة الكهرباء",
+  "CIVIL_ENGINEERING": "الهندسة المدنية",
+  "MECHANICAL_ENGINEERING": "الهندسة الميكانيكية",
+  "CHEMICAL_ENGINEERING": "الهندسة الكيميائية",
+  
+  "UNIVERSITY_OF_DUBAI": "جامعة دبي",
+  "SHARJAH_UNIVERSITY": "جامعة الشارقة",
+  "ABU_DHABI_UNIVERSITY": "جامعة أبو ظبي",
+  "AL_AIN_UNIVERSITY": "جامعة العين",
+  "DUBAI_POLYTECHNIC": "دبي للتقنية",
+  
+  "TESTIMONIAL_TEXT_1": "منصة EZone غيرت طريقة تعلمي للهندسة. الدروس التفاعلية والتمارين العملية ساعدتني في فهم المواد المعقدة بسهولة.",
+  "TESTIMONIAL_TEXT_2": "بفضل الدعم الأكاديمي من EZone، تمكنت من إكمال مشروع التخرج بنجاح وحصلت على تقدير امتياز. فريق الدعم كان متاحاً دائماً.",
+  "TESTIMONIAL_TEXT_3": "المنصة توفر مصادر تعليمية ممتازة للمهندسين. ساعدتني الأبحاث الجاهزة في توفير وقت كبير في مشاريعي الدراسية.",
+  "TESTIMONIAL_TEXT_4": "المدرسون الخبراء في EZone قدموا لي إرشادات قيمة في مجال الهندسة الميكانيكية. الجودة الأكاديمي ء ممتازة.",
+  "TESTIMONIAL_TEXT_5": "تفاعل المنصة وتصميمها سهل الاستخدام جعل من تجربة التعلم متعة حقيقية. أوصي بها لكل طالب هندسة."
+
 }

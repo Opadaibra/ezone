@@ -828,6 +828,7 @@ body.dark-theme .hero-image .hero-img {
       margin: 0 auto 1.5rem;
       background: linear-gradient(135deg, #1F4F77 0%, #7EA00E 100%);
       border-radius: 50%;
+      opacity: 0.4;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1219,7 +1220,7 @@ body.dark-theme .hero-image .hero-img {
               
               .value-icon-wrapper {
                   transform: scale(1.1) rotate(5deg);
-                  
+                 
                   .icon-background .icon-glow {
                       opacity: 0.6;
                       transform: scale(1.2);
@@ -1320,6 +1321,8 @@ body.dark-theme .hero-image .hero-img {
                   color: white;
                   z-index: 2;
                   transition: all 0.3s ease;
+                    opacity: 0.6;
+                  
               }
               
               .icon-pulse {
@@ -2477,7 +2480,7 @@ body.dark-theme .hero-image .hero-img {
                           }
                           
                           &.whatsapp .icon-wrapper {
-                              background: #25d366;
+                              background: #d3aa25;
                           }
                       }
                       
@@ -2938,5 +2941,486 @@ body.dark-theme .hero-image .hero-img {
   100% {
     opacity: 0.4;
     transform: scale(1.1);
+  }
+}
+
+
+/* أضف هذا CSS بعد قسم values وقبل الفوتر */
+
+.testimonials-section {
+  padding: 8rem 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2f7 100%);
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(31, 79, 119, 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(126, 160, 14, 0.05) 0%, transparent 40%);
+    z-index: 0;
+  }
+  
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.testimonials-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.testimonials-track {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 2rem 1rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.testimonial-card {
+  flex: 0 0 350px;
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 
+    0 15px 35px rgba(31, 79, 119, 0.1),
+    0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  opacity: 0.7;
+  transform: scale(0.95);
+  
+  &.active {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 
+      0 25px 50px rgba(31, 79, 119, 0.15),
+      0 10px 20px rgba(0, 0, 0, 0.1);
+    
+    .testimonial-header {
+      .student-avatar {
+        transform: scale(1.1);
+        
+        .avatar-frame {
+          animation: rotateFrame 10s linear infinite;
+        }
+        
+        .avatar-badge {
+          transform: scale(1.2) rotate(15deg);
+        }
+      }
+      
+      .quote-icon {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+      }
+    }
+    
+    .testimonial-wave path {
+      animation: waveMove 2s ease-in-out infinite;
+    }
+  }
+  
+  &:hover {
+    transform: translateY(-10px);
+    
+    &:not(.active) {
+      opacity: 0.9;
+    }
+  }
+  
+  @keyframes rotateFrame {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  @keyframes waveMove {
+    0%, 100% { d: path("M0,20 Q30,0 60,20 T120,20"); }
+    50% { d: path("M0,20 Q30,40 60,20 T120,20"); }
+  }
+}
+
+.testimonial-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  
+  .student-avatar {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 2;
+    }
+    
+    .avatar-frame {
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      right: -8px;
+      bottom: -8px;
+      border: 2px solid transparent;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1F4F77, #7EA00E) border-box;
+      -webkit-mask: 
+        linear-gradient(#fff 0 0) padding-box, 
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+      z-index: 1;
+    }
+    
+    .avatar-badge {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 30px;
+      height: 30px;
+      background: linear-gradient(135deg, #7EA00E, #9FC41A);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.8rem;
+      border: 3px solid white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 3;
+      transition: all 0.3s ease;
+    }
+  }
+  
+  .quote-icon {
+    font-size: 2.5rem;
+    color: rgba(31, 79, 119, 0.2);
+    transform: scale(0.8) rotate(-10deg);
+    opacity: 0.7;
+    transition: all 0.5s ease;
+  }
+}
+
+.testimonial-content {
+  .rating {
+    display: flex;
+    gap: 0.3rem;
+    margin-bottom: 1.5rem;
+    
+    i {
+      color: #FFD700;
+      font-size: 1.2rem;
+      
+      &:nth-child(5) {
+        color: #FFA500;
+      }
+    }
+  }
+  
+  .testimonial-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #4a5568;
+    margin-bottom: 2rem;
+    font-style: italic;
+    position: relative;
+    padding-left: 1.5rem;
+    
+    &::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 0;
+      font-size: 3rem;
+      color: rgba(31, 79, 119, 0.2);
+      font-family: serif;
+    }
+  }
+  
+  .student-info {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(31, 79, 119, 0.1);
+    
+    .student-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1F4F77;
+      margin-bottom: 0.3rem;
+    }
+    
+    .student-course {
+      color: #7EA00E;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+    
+    .student-university {
+      color: #718096;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.testimonial-wave {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  
+  path {
+    stroke-dasharray: 5, 5;
+  }
+}
+
+.testimonials-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  
+  .nav-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid rgba(31, 79, 119, 0.2);
+    color: #1F4F77;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &:hover {
+      background: linear-gradient(135deg, #1F4F77, #7EA00E);
+      border-color: transparent;
+      color: white;
+      transform: scale(1.1);
+      box-shadow: 0 10px 20px rgba(31, 79, 119, 0.3);
+    }
+    
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      
+      &:hover {
+        background: white;
+        color: #1F4F77;
+        transform: none;
+        box-shadow: none;
+      }
+    }
+  }
+  
+  .testimonial-dots {
+    display: flex;
+    gap: 0.8rem;
+    
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(31, 79, 119, 0.2);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      padding: 0;
+      
+      &.active {
+        background: linear-gradient(135deg, #1F4F77, #7EA00E);
+        transform: scale(1.3);
+      }
+      
+      &:hover:not(.active) {
+        background: rgba(31, 79, 119, 0.4);
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+.testimonial-stats {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(31, 79, 119, 0.1);
+  
+  .stat-item {
+    text-align: center;
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #1F4F77, #7EA00E);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+      line-height: 1;
+    }
+    
+    .stat-label {
+      color: #718096;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+  }
+}
+
+/* Dark Theme Support */
+:host-context(.dark-theme) {
+  .testimonials-section {
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    
+    &::before {
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(66, 153, 225, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(126, 160, 14, 0.05) 0%, transparent 40%);
+    }
+  }
+  
+  .testimonial-card {
+    background: var(--card-bg);
+    box-shadow: 
+      0 15px 35px rgba(0, 0, 0, 0.2),
+      0 5px 15px rgba(0, 0, 0, 0.1);
+    
+    &.active {
+      box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.3),
+        0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .testimonial-content {
+      .testimonial-text {
+        color: #e2e8f0;
+      }
+      
+      .student-info {
+        .student-university {
+          color: #a0aec0;
+        }
+      }
+    }
+  }
+  
+  .testimonials-nav {
+    .nav-btn {
+      background: var(--card-bg);
+      border-color: rgba(255, 255, 255, 0.1);
+      color: #e2e8f0;
+      
+      &:hover:not(:disabled) {
+        background: linear-gradient(135deg, #1F4F77, #7EA00E);
+        color: white;
+      }
+    }
+  }
+  
+  .testimonial-stats {
+    border-top-color: rgba(255, 255, 255, 0.1);
+    
+    .stat-label {
+      color: #a0aec0;
+    }
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .testimonial-card {
+    flex: 0 0 320px;
+  }
+  
+  .testimonial-stats {
+    gap: 3rem;
+    
+    .stat-item {
+      .stat-number {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials-section {
+    padding: 6rem 0;
+  }
+  
+  .testimonials-track {
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .testimonial-card {
+    flex: 0 0 300px;
+    padding: 2rem;
+  }
+  
+  .testimonials-nav {
+    gap: 1rem;
+    
+    .nav-btn {
+      width: 45px;
+      height: 45px;
+    }
+  }
+  
+  .testimonial-stats {
+    flex-wrap: wrap;
+    gap: 2rem;
+    
+    .stat-item {
+      flex: 0 0 calc(50% - 1rem);
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials-container {
+    padding: 1rem;
+  }
+  
+  .testimonial-card {
+    flex: 0 0 280px;
+  }
+  
+  .testimonial-stats {
+    .stat-item {
+      flex: 0 0 100%;
+      
+      .stat-number {
+        font-size: 2.2rem;
+      }
+    }
   }
 }

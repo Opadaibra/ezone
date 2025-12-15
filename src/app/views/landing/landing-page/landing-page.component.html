@@ -37,7 +37,7 @@
         </div>
       </div>
       <div class="hero-image animate__animated animate__flipInY" data-aos="fade-left">
-        <img src="assets/images/hero.jpg" alt="eZone Platform" class="hero-img">
+        <!-- <img src="assets/images/hero.jpg" alt="eZone Platform" class="hero-img"> -->
       </div>
     </div>
   </section>
@@ -217,7 +217,100 @@
     </div>
 </section>
 
-  
+  <!-- أضف هذا الكود بعد قسم values وقبل الفوتر -->
+
+<section class="testimonials-section" id="testimonials">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2>{{ 'STUDENT_TESTIMONIALS' | translate }}</h2>
+      <p class="section-subtitle">{{ 'WHAT_OUR_STUDENTS_SAY' | translate }}</p>
+    </div>
+
+    <div class="testimonials-container">
+      <!-- شريط التمرير اليدوي -->
+      <div class="testimonials-track" #testimonialsTrack>
+        <div class="testimonial-card" *ngFor="let testimonial of testimonials; let i = index"
+             [class.active]="currentTestimonial === i">
+          
+          <!-- الصورة والأيقونات -->
+          <div class="testimonial-header">
+            <div class="student-avatar">
+              <!-- <img [src]="testimonial.avatar" [alt]="testimonial.name" class="avatar-img"> -->
+              <!-- <div class="avatar-frame"></div> -->
+              <div class="avatar-badge">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+            </div>
+            
+            <div class="quote-icon">
+              <i class="fa-solid fa-quote-left"></i>
+            </div>
+          </div>
+
+          <!-- المحتوى -->
+          <div class="testimonial-content">
+            <div class="rating">
+              <i class="fa-solid fa-star" *ngFor="let star of [1,2,3,4,5]"></i>
+            </div>
+            
+            <p class="testimonial-text">{{ testimonial.text | translate }}</p>
+            
+            <div class="student-info">
+              <h4 class="student-name">{{ testimonial.name | translate }}</h4>
+              <p class="student-course">{{ testimonial.course | translate }}</p>
+              <p class="student-university">{{ testimonial.university | translate }}</p>
+            </div>
+          </div>
+
+          <!-- موجات ديكورية -->
+          <div class="testimonial-wave">
+            <svg width="100%" height="40">
+              <path d="M0,20 Q30,0 60,20 T120,20" 
+                    fill="none" 
+                    stroke="var(--primary-color)" 
+                    stroke-width="2"
+                    opacity="0.3"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- أزرار التنقل -->
+      <div class="testimonials-nav">
+        <button class="nav-btn prev-btn" (click)="prevTestimonial()">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        
+        <div class="testimonial-dots">
+          <button class="dot" *ngFor="let testimonial of testimonials; let i = index"
+                  [class.active]="currentTestimonial === i"
+                  (click)="goToTestimonial(i)">
+          </button>
+        </div>
+        
+        <button class="nav-btn next-btn" (click)="nextTestimonial()">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <!-- إحصائيات سريعة -->
+      <div class="testimonial-stats">
+        <div class="stat-item">
+          <div class="stat-number">4.9</div>
+          <div class="stat-label">{{ 'AVERAGE_RATING' | translate }}</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">{{ testimonials.length }}+</div>
+          <div class="stat-label">{{ 'STUDENT_REVIEWS' | translate }}</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">98%</div>
+          <div class="stat-label">{{ 'SATISFACTION_RATE' | translate }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- <section class="contact-section" id="contact">
     <div class="container">
@@ -341,7 +434,7 @@
                 </div>
                 
                 <!-- شهادة الجودة -->
-                <div class="quality-badge">
+                <!-- <div class="quality-badge">
                     <div class="badge-icon">
                         <i class="fa-solid fa-award"></i>
                     </div>
@@ -349,7 +442,7 @@
                         <span>{{ 'QUALITY_CERTIFIED' | translate }}</span>
                         <span class="badge-year">Since 2023</span>
                     </div>
-                </div>
+                </div> -->
             </div>
             
             <!-- عمود روابط سريعة -->
@@ -395,7 +488,7 @@
                 <h3 class="column-title">{{ 'CONNECT_WITH_US' | translate }}</h3>
                 
                 <!-- النشرة الإخبارية -->
-                <div class="newsletter-card">
+                <!-- <div class="newsletter-card">
                     <div class="newsletter-header">
                         <i class="fa-solid fa-newspaper"></i>
                         <h4>{{ 'STAY_UPDATED' | translate }}</h4>
@@ -407,7 +500,7 @@
                             <i class="fa-solid fa-paper-plane"></i>
                         </button>
                     </div>
-                </div>
+                </div> -->
                 
                 <!-- أيقونات التواصل الاجتماعي -->
                 <div class="social-icons-grid">
@@ -427,18 +520,18 @@
                         <div class="icon-label">Instagram</div>
                     </a>
                     
-                    <a href="#" class="social-icon-3d twitter" aria-label="تويتر">
+                    <a href="https://t.me/EZone2022" class="social-icon-3d twitter" aria-label="تويتر">
                         <div class="icon-wrapper">
-                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-telegram"></i>
                         </div>
-                        <div class="icon-label">Twitter</div>
+                        <div class="icon-label">Telegram</div>
                     </a>
                     
-                    <a href="#" class="social-icon-3d whatsapp" aria-label="واتساب">
+                    <a href="mailto:engineeringzone22@gmail.com" class="social-icon-3d whatsapp" aria-label="واتساب">
                         <div class="icon-wrapper">
-                            <i class="fab fa-whatsapp"></i>
+                            <i class="fas fa-envelope"></i>
                         </div>
-                        <div class="icon-label">WhatsApp</div>
+                        <div class="icon-label">Gmail</div>
                     </a>
                 </div>
                 
