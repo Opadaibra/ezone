@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({ providedIn: 'root' })
 export class TranslateStateService {
   private readonly CACHE_KEY = 'app_lang';
-  private langSubject = new BehaviorSubject<string>('en');
+  private langSubject = new BehaviorSubject<string>('de');
   lang$ = this.langSubject.asObservable();
 
   private translations: Record<string, any> = {};
@@ -20,7 +20,7 @@ export class TranslateStateService {
     const cachedLang = localStorage.getItem(this.CACHE_KEY);
     const browserLang = navigator.language.split('-')[0]; 
 
-    let defaultLang = 'en';
+    let defaultLang = 'de';
     if (cachedLang && this.availableLangsList.includes(cachedLang)) {
       defaultLang = cachedLang;
     } else if (this.availableLangsList.includes(browserLang)) {
@@ -38,7 +38,7 @@ export class TranslateStateService {
       this.availableLangsList = await res.json();
     } catch (err) {
       console.error('Failed to load available languages', err);
-      this.availableLangsList = ['en']; // fallback
+      this.availableLangsList = ['de']; // fallback
     }
   }
 
@@ -48,8 +48,8 @@ export class TranslateStateService {
 
   async setLang(lang: string) {
     if (!this.availableLangsList.includes(lang)) {
-      console.warn(`Language "${lang}" not in available list, fallback to 'en'`);
-      lang = 'en';
+      console.warn(`Language "${lang}" not in available list, fallback to 'de'`);
+      lang = 'de';
     }
 
     if (!this.translations[lang]) {

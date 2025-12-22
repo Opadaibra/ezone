@@ -240,4 +240,56 @@ scrollToTestimonial() {
     });
   }
 }
+
+private slideInterval: any;
+private currentSlide = 0;
+private totalSlides = 3;
+
+ngOnInit() {
+  this.startSlider();
+}
+
+ngOnDestroy() {
+  this.stopSlider();
+}
+
+private startSlider() {
+  // التبديل كل 5 ثواني (يمكن تغيير المدة)
+  this.slideInterval = setInterval(() => {
+    this.changeSlide();
+  }, 5000);
+}
+
+private stopSlider() {
+  if (this.slideInterval) {
+    clearInterval(this.slideInterval);
+  }
+}
+
+private changeSlide() {
+  // إزالة active من السلايد الحالي
+  const slides = document.querySelectorAll('.hero-slider .slide');
+  if (slides.length === 0) return;
+
+  slides[this.currentSlide].classList.remove('active');
+
+  // الذهاب للسلايد التالي
+  this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+
+  // إضافة active للسلايد الجديد
+  slides[this.currentSlide].classList.add('active');
+}
+
+// دالة يدوية للتبديل إذا أردت إضافة أزرار تحكم
+goToSlide(index: number) {
+  this.stopSlider();
+  
+  const slides = document.querySelectorAll('.hero-slider .slide');
+  slides.forEach(slide => slide.classList.remove('active'));
+  
+  this.currentSlide = index % this.totalSlides;
+  slides[this.currentSlide].classList.add('active');
+  
+  this.startSlider();
+}
 }
